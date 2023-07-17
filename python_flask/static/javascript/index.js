@@ -2,15 +2,23 @@ new Vue({
     el: "#app",
     data:{
         valores: "",
+        nombre: "",
+        correo: "",
+        paswor: "", 
     },
     methods:{
         peticiones_registro(){
-            axios.post("/registro")
+            datos_formulario = {
+                nombre_peticion = this.nombre,
+                correo_peticion = this.correo,
+                paswor_peticion = this.paswor
+            };
+            axios.post("/registro",datos_formulario)
             .then((response)=>{
-                console.log("");
+                console.log(response.data);
             })
-            .catch((error)=>{
-                
+            .catch((err)=>{
+                console.log(err);
             });
         },
         inicializa_valores(){
