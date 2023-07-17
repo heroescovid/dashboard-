@@ -7,5 +7,6 @@ def index():
     return render_template("index.html")
 app.route("/api/datos")
 def datos():
+    
     return render_template("datos.html")
 app.run("0.0.0.0",port = 8897,debug = False)
